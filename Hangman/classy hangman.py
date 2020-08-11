@@ -1,7 +1,6 @@
 #%%
 #Hangman python class
 
-from Hangman.hangman import good_guesses, user_guess
 import random
 
 class Hangman():
@@ -15,8 +14,8 @@ class Hangman():
         self.wrong_attempts = 0
         self.lives = 10
 
-    def new_game_word(self):
-        new_word = random.choice(self.possible_words)
+    def new_game_word(self, possible_words):
+        new_word = random.choice(possible_words)
         print("The word has been chosen. Now you must guess it")
         return new_word
     
