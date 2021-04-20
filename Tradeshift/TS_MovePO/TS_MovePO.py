@@ -24,29 +24,31 @@ def put(url):
     return response
 
 def environment():
+    f_env_url = ''
     sandbox = "https://api-sandbox.tradeshift.com/tradeshift/rest/external/"
     production = "https://api.tradeshift.com/tradeshift/rest/external/"
     env_choice = False
     while env_choice == False:
         environment = input("choose environment to run the script it (0 for Sanbox and 1 for Proudction): ")
         if environment == "0":
-            env_url = sandbox
+            f_env_url = sandbox
             env_choice = True
         elif environment == "1":
-            env_url = production
+            f_env_url = production
             env_choice = True
-    return env_url
+    return f_env_url
 
 
 env_url = environment()
 
 def csv_choice():
+    f_separator = ''
     choice = False
     while choice == False:
-        separator = str(input("Please choose CSV separator (, or ;): "))
-        if separator == ',' or separator == ';':
+        f_separator = str(input("Please choose CSV separator (, or ;): "))
+        if f_separator == ',' or f_separator == ';':
             choice = True
-    return separator
+    return f_separator
 
 separator = csv_choice()
 #CSV Line counter used for logging responses
